@@ -8,7 +8,7 @@ jobs:
     environment: production
     steps:
       - name: Not on Monday or Wednesday       
-        run: echo "GITHUB_BASE_REF ${{GITHUB_BASE_REF}}"
+        run: echo "GITHUB_BASE_REF ${{ GITHUB_BASE_REF }}"
       # - name: Checkout
       #   uses: actions/checkout@v2
 
