@@ -38,7 +38,7 @@ jobs:
 
       - name: Build and Push Docker Image latest
         uses: docker/build-push-action@v2
-        id: docker_build
+        id: docker_build_latest
         with:
           context: ./
           file: ./Dockerfile
