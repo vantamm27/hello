@@ -29,7 +29,7 @@ jobs:
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flask-helloworld:{{GITHUB_BASE_REF}}-{{GITHUB_JOB}}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flask-helloworld:{{env.GITHUB_BASE_REF}}-{{env.GITHUB_JOB}}
           # cache-from: type=local,src=/tmp/.buildx-cache
           # cache-to: type=local,dest=/tmp/.buildx-cache
 
