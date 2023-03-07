@@ -29,24 +29,11 @@ jobs:
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flask-helloworld:$GITHUB_JOB-$GITHUB_BASE_REF
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flask-helloworld:$GITHUB_BASE_REF
           # cache-from: type=local,src=/tmp/.buildx-cache
           # cache-to: type=local,dest=/tmp/.buildx-cache
 
       - name: Verify
         run: echo ${{ steps.docker_build.outputs.digest }}
 
-      - name: Build and Push Docker Image latest
-        uses: docker/build-push-action@v2
-        id: docker_build_latest
-        with:
-          context: ./
-          file: ./Dockerfile
-          builder: ${{ steps.buildx.outputs.name }}
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flask-helloworld:$GITHUB_BASE_REF
-          # cache-from: type=local,src=/tmp/.buildx-cache
-          # cache-to: type=local,dest=/tmp/.buildx-cache
-
-      - name: Verify-latest
-        run: echo ${{ steps.docker_build.outputs.digest }}        
+      
