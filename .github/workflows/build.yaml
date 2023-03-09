@@ -8,7 +8,7 @@ jobs:
     environment: production
     steps:
       - name: Not on Monday or Wednesday       
-        run: env
+        run: ${{ github.base_ref }}
       # - name: Checkout
       #   uses: actions/checkout@v2
 
