@@ -8,7 +8,7 @@ jobs:
     environment: production
     steps:
       - name: Not on Monday or Wednesday       
-        run: echo " ${{ github.action }}"
+        run:  echo " ${{ github.actor_id }}" &&   echo " ${{ github.ref }} "
       # - name: Checkout
       #   uses: actions/checkout@v2
 
