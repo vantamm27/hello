@@ -24,7 +24,7 @@ jobs:
 
 
       - name: print env
-        run: print $GITHUB_RUN_ID
+        run: echo "$GITHUB_RUN_ID ${{env.SERVICE_NAME}}"
         
       - name: Login Docker Hub
         uses: docker/login-action@v1
