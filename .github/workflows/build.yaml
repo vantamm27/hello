@@ -3,12 +3,23 @@ on:
   push:
     branches: [ master ]
 jobs:
-  docker-prod:
+  build-package:
     runs-on: ubuntu-latest
     environment: production
+    container: golang:1.20.4
+    options:
+        -e ${{github.workspace}}
+        -v "${{github.workspace}}":"${{github.workspace}}"
     steps:
-      - name: Not on Monday or Wednesday       
-        run:  echo " ${{ github.actor_id }}" &&   echo " ${{ github.ref }} "
+      - name: check working dir
+        run: pwd
+      - name: check go version        
+        run:  go version
+      - name: chcekout 
+        use: actions/checkout@v2
+      - name: check source 
+        run: ls ./
+
       # - name: Checkout
       #   uses: actions/checkout@v2
 
