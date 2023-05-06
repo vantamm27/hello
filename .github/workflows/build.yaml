@@ -28,7 +28,7 @@ jobs:
 
 
       - name: print env
-        run: echo "$GITHUB_RUN_ID $GITHUB_ACTOR_ID ${{vars.SERVICE_NAME}} ${GITHUB_SHA::7}"
+        run: echo "$GITHUB_RUN_ID $GITHUB_ACTOR_ID ${{vars.SERVICE_NAME}} ${GITHUB_SHA::7} "
         
       - name: Login Docker Hub
         uses: docker/login-action@v1
