@@ -41,7 +41,7 @@ jobs:
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: "${{ env.DOCKERHUB_USERNAME }}/${{ env.SERVICE_NAME }}:$GITHUB_ACTOR_ID"
+          tags: "${{ env.DOCKERHUB_USERNAME }}/${{ env.SERVICE_NAME }}:${{ GITHUB_ACTOR_ID}}"
           # cache-from: type=local,src=/tmp/.buildx-cache
           # cache-to: type=local,dest=/tmp/.buildx-cache
 
