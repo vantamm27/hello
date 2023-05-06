@@ -6,10 +6,11 @@ jobs:
   build-package:
     runs-on: ubuntu-latest
     environment: production
-    container: golang:1.20.4
-    options:
-        -e ${{github.workspace}}
-        -v "${{github.workspace}}":"${{github.workspace}}"
+    container: 
+      image: golang:1.20.4
+      env:
+        NODE_ENV: develop
+      options: -e ${{github.workspace}} -v "${{github.workspace}}":"${{github.workspace}}"
     steps:
       - name: check working dir
         run: pwd
