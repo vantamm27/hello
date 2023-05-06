@@ -49,7 +49,7 @@ jobs:
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: "${{secrets.DOCKERHUB_USERNAME}}/${{vars.SERVICE_NAME}}:$GITHUB_ACTOR_ID"
+          tags: "${{secrets.DOCKERHUB_USERNAME}}/${{vars.SERVICE_NAME}}:${GITHUB_SHA::7}"
           # cache-from: type=local,src=/tmp/.buildx-cache
           # cache-to: type=local,dest=/tmp/.buildx-cache
 
