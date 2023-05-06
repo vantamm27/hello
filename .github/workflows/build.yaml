@@ -17,7 +17,7 @@ jobs:
       - name: check go version        
         run:  go version
       - name: chcekout 
-        use: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: check source 
         run: ls ./
 
